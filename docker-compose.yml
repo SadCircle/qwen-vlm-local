@@ -1,0 +1,26 @@
+services:
+  qwen-vlm:
+    build: .
+    container_name: qwen-vlm
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      MODEL_PATH: ${MODEL_PATH}
+      MMPROJ_PATH: ${MMPROJ_PATH}
+      PORT: ${PORT}
+      CTX_SIZE: ${CTX_SIZE}
+      N_GPU_LAYERS: ${N_GPU_LAYERS}
+      THREADS: ${THREADS}
+      BATCH_SIZE: ${BATCH_SIZE}
+      UBATCH_SIZE: ${UBATCH_SIZE}
+      ENABLE_THINKING: ${ENABLE_THINKING}
+    volumes:
+      - ./models:/models:ro
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
