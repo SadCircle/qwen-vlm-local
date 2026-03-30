@@ -1,0 +1,29 @@
+[[sources]]
+id = "client1_pg"
+dsn = "postgres://client1_user:client1_pass@127.0.0.1:5432/client1_db?sslmode=disable"
+lazy = true
+
+[[sources]]
+id = "client2_pg"
+dsn = "postgres://client2_user:client2_pass@127.0.0.1:5432/client2_db?sslmode=disable"
+lazy = true
+
+[[tools]]
+name = "execute_sql"
+source = "client1_pg"
+readonly = true
+max_rows = 100
+
+[[tools]]
+name = "search_objects"
+source = "client1_pg"
+
+[[tools]]
+name = "execute_sql"
+source = "client2_pg"
+readonly = true
+max_rows = 100
+
+[[tools]]
+name = "search_objects"
+source = "client2_pg"

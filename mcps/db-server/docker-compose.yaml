@@ -1,0 +1,16 @@
+services:
+  dbhub:
+    image: bytebase/dbhub:latest
+    container_name: dbhub
+    command:
+      - --transport
+      - http
+      - --port
+      - "8080"
+      - --config
+      - /workspace/dbhub.toml
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dbhub.toml:/workspace/dbhub.toml:ro
+    restart: unless-stopped

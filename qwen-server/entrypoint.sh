@@ -23,4 +23,5 @@ exec /app/llama-server \
   --batch-size "${BATCH_SIZE}" \
   --ubatch-size "${UBATCH_SIZE}" \
   --n-gpu-layers "${N_GPU_LAYERS}" \
-  --chat-template-kwargs "${CHAT_TEMPLATE_KWARGS}"
+  --chat-template-kwargs "${CHAT_TEMPLATE_KWARGS}" \
+  --webui-mcp-proxy
