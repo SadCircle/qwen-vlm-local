@@ -31,7 +31,7 @@ services:
       - FASTMCP_SERVER_HOST=0.0.0.0
       - FASTMCP_SERVER_PORT=9633
       # - EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
-      - FASTEMBED_CACHE_PATH="/app/models"
+      - FASTEMBED_CACHE_PATH=/app/models
 
       # - EMBEDDING_PROVIDER=fastembed
 
