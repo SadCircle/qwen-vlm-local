@@ -43,7 +43,8 @@ class EmbeddingProviderSettings(BaseSettings):
         validation_alias="EMBEDDING_PROVIDER",
     )
     model_name: str = Field(
-        default="sentence-transformers/all-MiniLM-L6-v2",
+        default="snowflake/snowflake-arctic-embed-l",
+        # default="sentence-transformers/all-MiniLM-L6-v2",
         validation_alias="EMBEDDING_MODEL",
     )
 
