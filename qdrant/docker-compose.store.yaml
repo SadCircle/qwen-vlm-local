@@ -23,12 +23,16 @@ services:
     command: ["python", "-m", "mcp_server_qdrant"]
     ports:
       - "9633:9633"
+    volumes:
+      - ./models:/app/models
     environment:
       - QDRANT_URL=http://qdrant:6333
       - QDRANT_API_KEY=1
       - FASTMCP_SERVER_HOST=0.0.0.0
       - FASTMCP_SERVER_PORT=9633
-      - EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+      # - EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+      - FASTEMBED_CACHE_PATH="/app/models"
+
       # - EMBEDDING_PROVIDER=fastembed
 
     depends_on:
