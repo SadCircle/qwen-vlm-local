@@ -1,1 +1,10 @@
 *gguf
+.vscode/
+.idea/
+*.log
+*.cache
+*.tmp
+__pycache__/
+*.pyc
+*.pyo
+qdrant_storage/
